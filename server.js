@@ -4,7 +4,14 @@ const express = require('express');
 const app = express();
 const port = 3000;
 
+//*views engine config
+app.set("view engine", "jsx");
+app.engine("jsx", require("jsx-view-engine").createEngine());
+
 //* Routes
+app.get('/new', (req, res) => {
+    res.send("new")
+})
 
 
 
