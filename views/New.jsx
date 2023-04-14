@@ -5,11 +5,11 @@ function New() {
   return (
     <div>
       <form action="/logs" method="POST">
-        <label htmlFor="title">Title</label>
-        <input type="text" name="name" />
+        <label htmlFor="title">Title:</label>
+        <input type="text" name="title" id="title" />
         <br />
-        <label htmlFor="entry">Entry</label>
-        <input type="text" name="entry" />
+        <label htmlFor="entry">Entry:</label>
+        <input type="textarea" name="entry" id="entry" />
         <br />
         Ship Is Broken: <input type="checkbox" name="shipIsBroken" />
         <br />

@@ -1,6 +1,7 @@
 require('dotenv').config();
 const express = require('express');
 const connect = require('./config/db');
+const Logs = require('./models/Logs');
 
 
 const app = express();
@@ -20,16 +21,25 @@ app.use(express.urlencoded({ extended: false }));
 app.get('/logs', (req, res) => {
     res.send("Welcome Page")
 })
+// app.get("/logs/show", (req, res) => {
+//   res.render('Show');
+// });
 app.get('/logs/new', (req, res) => {
     res.render('New')
 })
+//Create Route
 app.post('/logs', (req, res) => {
     if(req.body.shipIsBroken === "on"){
         req.body.shipIsBroken = true
     }else {
         req.body.shipIsBroken = false;
     }
-    res.send(req.body)
+    Logs.create(req.body)
+    .then(logs =>{
+        // console.log(logs)
+        res.redirect('/logs')
+    })
+    .catch(error => console.log(error))
 })
 
 
