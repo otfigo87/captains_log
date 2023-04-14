@@ -18,12 +18,12 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
 //* Routes
+//Index route
 app.get('/logs', (req, res) => {
-    res.send("Welcome Page")
+    Logs.find().then((logs) => res.render("Index", { logs }))
+    .catch(err => console.error(err));
+    
 })
-// app.get("/logs/show", (req, res) => {
-//   res.render('Show');
-// });
 app.get('/logs/new', (req, res) => {
     res.render('New')
 })
