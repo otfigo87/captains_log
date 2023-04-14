@@ -1,8 +1,12 @@
+require('dotenv').config();
 const express = require('express');
+const connect = require('./config/db');
 
 
 const app = express();
 const port = 3000;
+
+connect()
 
 //*views engine config
 app.set("view engine", "jsx");
