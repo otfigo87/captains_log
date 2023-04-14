@@ -1,7 +1,6 @@
 const React = require('react');
 
 const Index = ({ logs }) => {
-  console.log(logs);
   return (
     <div>
         <h2>Index Page</h2>
@@ -10,7 +9,7 @@ const Index = ({ logs }) => {
         <ul>
           { logs.map((log, i )=> (
             <li key={i}>
-              {log.title}
+             <a href={`/logs/show/${log._id}`}>{log.title}</a> 
             </li>
           )) }
         </ul>

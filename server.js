@@ -24,6 +24,14 @@ app.get('/logs', (req, res) => {
     .catch(err => console.error(err));
     
 })
+//Show route
+app.get('/logs/show/:id', (req, res) => {
+    Logs.findById(req.params.id)
+    .then(log => { 
+        res.render('Show', {log})})
+    .catch(err => console.error(err));
+})
+//New form route
 app.get('/logs/new', (req, res) => {
     res.render('New')
 })
