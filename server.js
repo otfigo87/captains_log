@@ -1,5 +1,6 @@
 require('dotenv').config();
 const express = require('express');
+const methodOverride = require("method-override");
 const connect = require('./config/db');
 const Logs = require('./models/Logs');
 
@@ -16,6 +17,7 @@ app.engine("jsx", require("jsx-view-engine").createEngine());
 //* Middleware
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
+app.use(methodOverride("_method"));
 
 //* Routes
 //Index route
@@ -23,6 +25,11 @@ app.get('/logs', (req, res) => {
     Logs.find().then((logs) => res.render("Index", { logs }))
     .catch(err => console.error(err));
     
+})
+app.delete('/logs/:id', (req, res) => {
+    Logs.findByIdAndDelete(req.params.id)
+    .then(log => res.redirect('/logs'))
+    .catch(err => console.error(err))
 })
 //Show route
 app.get('/logs/show/:id', (req, res) => {
