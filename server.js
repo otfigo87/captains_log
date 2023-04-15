@@ -3,6 +3,7 @@ const express = require("express");
 const methodOverride = require("method-override");
 const connect = require("./config/db");
 const Logs = require("./models/Logs");
+const routes = require("./controllers/logs");
 
 const app = express();
 const port = 3000;
@@ -19,7 +20,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(methodOverride("_method"));
 
 //*======================== Routes ======================================
-//Index route
+//!Index route
 app.get("/logs", (req, res) => {
   Logs.find()
     .then((logs) => res.render("Index", { logs }))
@@ -75,7 +76,6 @@ app.delete("/logs/:id", (req, res) => {
     .then((log) => res.redirect("/logs"))
     .catch((err) => console.error(err));
 });
-
 
 
 app.listen(port, (req, res) => {
