@@ -1,9 +1,9 @@
 const React = require('react');
+const Wrapper = require('./layout/Wrapper')
 
 const Index = ({ logs }) => {
   return (
-    <div>
-      <h2>Index Page</h2>
+    <Wrapper title="Logs / Index Page">
       <a href="/logs/new">Create page</a>
       <h3>welcome Page</h3>
       <ul>
@@ -18,7 +18,7 @@ const Index = ({ logs }) => {
           </li>
         ))}
       </ul>
-    </div>
+    </Wrapper>
   );
 }
 

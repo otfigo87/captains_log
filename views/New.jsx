@@ -1,9 +1,10 @@
 const React = require("react");
+const Wrapper = require('./layout/Wrapper')
 
 
 function New() {
   return (
-    <div>
+    <Wrapper title="New Log">
       <form action="/logs" method="POST">
         <label htmlFor="title">Title:</label>
         <input type="text" name="title" id="title" />
@@ -15,7 +16,7 @@ function New() {
         <br />
         <input type="submit" name="" value="Submit" />
       </form>
-    </div>
+    </Wrapper>
   );
 }
 
