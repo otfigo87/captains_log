@@ -75,3 +75,9 @@ input {
 span {
     color: red;
 }
+nav>ul>li>a {
+    color: black;
+    font-style: normal;
+    font-size: 1.4em;
+    text-decoration: underline
+}

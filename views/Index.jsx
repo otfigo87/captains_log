@@ -4,7 +4,6 @@ const Wrapper = require('./layout/Wrapper')
 const Index = ({ logs }) => {
   return (
     <Wrapper title="Logs / Index ">
-      <a href="/logs/new">Create page</a>
       <h3>welcome</h3>
       <ul>
         {logs.map((log, i) => (
