@@ -7,14 +7,15 @@ function New() {
     <Wrapper title="New Log">
       <form action="/logs" method="POST">
         <label htmlFor="title">Title:</label>
-        <input type="text" name="title" id="title" />
+        <input className="new" type="text" name="title" id="title" />
         <br />
         <label htmlFor="entry">Entry:</label>
-        <input type="textarea" name="entry" id="entry" />
+        <input className="new" type="textarea" name="entry" id="entry" />
         <br />
-        Ship Is Broken: <input type="checkbox" name="shipIsBroken" />
+       <label htmlFor="broken">Ship Is Broken:</label>
+        <input type="checkbox" name="shipIsBroken" id="broken" />
         <br />
-        <input type="submit" name="" value="Submit" />
+        <input className="sub" type="submit" name="" value="Submit" />
       </form>
     </Wrapper>
   );

@@ -5,6 +5,7 @@ const Wrapper = ({children, title}) => {
         <html>
             <head>
                 <title>{title}</title>
+                <link rel="stylesheet" type="text/css" href="/styles.css" />
             </head>
             <body>
                 <h2>{title}</h2>
