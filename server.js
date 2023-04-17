@@ -2,7 +2,6 @@ require("dotenv").config();
 const express = require("express");
 const methodOverride = require("method-override");
 const connect = require("./config/db");
-const Logs = require("./models/Logs");
 const routes = require("./controllers/logs");
 
 const app = express();
@@ -26,6 +25,7 @@ app.use("/logs", routes);
 app.use("/logs/new", routes);
 app.use("/logs/:id", routes);
 app.use("/logs/:id/edit", routes);
+
 
 
 
